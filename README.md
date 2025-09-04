@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# School Management System
 
-## Getting Started
+A mini-project built with **Next.js** and **MySQL** for managing schools.  
+It allows users to **add new schools** and **view the list of schools** in an ecommerce-style layout.  
+Deployed on Vercel.
 
-First, run the development server:
+---
 
+## 🚀 Live Demo
+🔗 [Live Project](https://school-management-gray-zeta.vercel.app)  
+
+## 📂 GitHub Repository
+🔗 [GitHub Repo](https://github.com/sharmaHarshit2000/school-management)
+
+---
+
+## 📸 Screenshots
+
+### Homepage
+![Homepage](./screenshots/homepage.png)
+
+### Add School Page
+![Add School Page](./screenshots/addSchool.png)
+
+### Show Schools Page
+![Show Schools Page](./screenshots/showSchools.png)
+
+---
+
+## 🛠 Tech Stack
+- **Next.js 14** (App Router)
+- **MySQL** (via Railway)
+- **Prisma ORM**
+- **Cloudinary** (for image upload)
+- **Tailwind CSS** (for styling)
+- **React Hook Form** (form handling & validation)
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/sharmaHarshit2000/school-management.git
+cd school-management
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Configure Environment Variables
+Create a `.env.local` file in the root of your project and add the following:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+# Database Configuration
+DB_HOST=interchange.proxy.rlwy.net
+DB_PORT=38180
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=railway
 
-## Learn More
+CLOUDINARY_CLOUD_NAME=cloudinary_cloud_name
+CLOUDINARY_API_KEY=api_key
+CLOUDINARY_API_SECRET=api_secret
+```
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Run the Project Locally
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Your project should now be running on [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
+```
+school-management/
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── addSchool/         # Add School page
+│   │   ├── showSchools/       # Show Schools page
+│   │   ├── api/schools/       # API route for schools
+│   │   ├── components/        # Reusable components
+│   │   ├── lib/               # Cloudinary helper
+│   │   ├── styles/            # Global styles
+│   │   ├── layout.tsx         # Root layout
+│   │   ├── page.tsx           # Homepage
+│   │   └── error.tsx          # Error page
+├── .env.local                 # Environment variables
+├── package.json
+├── tsconfig.json
+└── README.md
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📌 Features
+- Add schools with **form validation**
+- Upload school images to **Cloudinary**
+- Store school data in **MySQL**
+- Display schools in **grid layout**
+- Fully responsive (Mobile + Desktop)
+- Dark/Light mode support
+
+---
+
+## 📤 Submission
+- GitHub Repo: [https://github.com/sharmaHarshit2000/school-management](https://github.com/sharmaHarshit2000/school-management)  
+- Live Link: [https://school-management-gray-zeta.vercel.app](https://school-management-gray-zeta.vercel.app)  
+- README with setup instructions (this file)
+
+---
+
