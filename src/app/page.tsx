@@ -1,103 +1,98 @@
-import Image from "next/image";
+"use client";
+
+import {
+  GraduationCap,
+  BarChart3,
+  Zap,
+  PlusCircle,
+  ClipboardList,
+} from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 bg-custom text-custom transition-all duration-300">
+      <div className="text-center max-w-4xl mb-16">
+        <div className="mb-8">
+          <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl flex items-center justify-center shadow-2xl">
+            <GraduationCap size={48} className="text-white" />
+          </div>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-500 dark:from-blue-400 dark:to-green-400 drop-shadow-md">
+              Welcome to
+            </span>{" "}
+            <span className="text-accent-blue">School</span>
+            <span className="text-accent-green"> Management</span>
+          </h1>
+        </div>
+        <p className="text-lg md:text-xl text-card mb-12 leading-relaxed max-w-3xl mx-auto">
+          A modern, intuitive platform designed to streamline school
+          administration, student management, and academic reporting with
+          powerful yet simple tools.
+        </p>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 w-full max-w-6xl">
+        {[
+          {
+            icon: <GraduationCap size={28} />,
+            title: "Student Management",
+            desc: "Easily add, edit, or remove student records with our intuitive interface. Track progress and manage information efficiently.",
+            bg: "bg-blue-100 dark:bg-blue-900/30",
+          },
+          {
+            icon: <BarChart3 size={28} />,
+            title: "Smart Reports",
+            desc: "Generate comprehensive reports for attendance, performance, and analytics with just a few clicks.",
+            bg: "bg-green-100 dark:bg-green-900/30",
+          },
+          {
+            icon: <Zap size={28} />,
+            title: "Easy Navigation",
+            desc: "Quick access to all features through our clean, modern interface. Designed for speed and efficiency.",
+            bg: "bg-purple-100 dark:bg-purple-900/30",
+          },
+        ].map((feature, i) => (
+          <div
+            key={i}
+            className="bg-card text-card p-8 rounded-3xl shadow-md border border-custom transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            <div
+              className={`${feature.bg} w-16 h-16 mb-6 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}
+            >
+              {feature.icon}
+            </div>
+            <h2 className="text-2xl font-bold mb-4">{feature.title}</h2>
+            <p className="text-card/90 leading-relaxed">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="text-center mb-20">
+        <h2 className="text-3xl font-bold mb-8 text-card">Get Started Today</h2>
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <a href="/addSchool" className="btn btn-blue flex items-center gap-3">
+            <PlusCircle size={20} />
+            Add New School
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/showSchools"
+            className="btn btn-green flex items-center gap-3"
           >
-            Read our docs
+            <ClipboardList size={20} />
+            View Schools
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Footer */}
+      <div className="text-center mt-16 pt-8 border-t border-custom">
+        <p className="text-card/80 text-sm">
+          Built with ❤️ using Next.js & TailwindCSS •
+          <span className="text-accent-blue ml-1">
+            Modern School Management Solution
+          </span>
+        </p>
+      </div>
     </div>
   );
 }
